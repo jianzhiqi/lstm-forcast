@@ -98,7 +98,7 @@ def series_to_supervised(data, n_in=1, n_out=1, dropnan=True):
 # load dataset
 interval = '600s'
 names=["date","time","epoch","moteid","temperature","humidity","light","voltage"]
-dataset = read_csv("/Users/mengfangyuan/Downloads/data.txt",header=None,delim_whitespace=True,names=names,parse_dates=[[0,1]],index_col="date_time")
+dataset = read_csv("/Users/usr/Downloads/data.txt",header=None,delim_whitespace=True,names=names,parse_dates=[[0,1]],index_col="date_time")
 pre_data = dataset[dataset.moteid == 1 & (dataset.temperature < 28)]
 # pre_data = dataset[dataset.moteid == 1 & (dataset.temperature < 28) & (dataset.temperature > 10)]
 pre_data = pre_data.resample(interval).last()
